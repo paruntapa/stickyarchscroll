@@ -2,20 +2,219 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+    font-family: "PP";
+    src: url("/fonts/MonumentExtended-Regular.otf");
+    
   }
+  
+  @font-face {
+    font-family: "PPBold";
+    src: url("/fonts/MonumentExtended-Ultrabold.otf");
+    
+  }
+
+html, body {
+    width: 100vw;
+    height: 900vh;
+    background-color: black;
+    color: white;
+    font-family: "PP";
+    
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+img {
+    width: 100vh;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    
+    
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    font-family: "PP";
+}
+
+p#logo {
+    text-transform: uppercase;
+    font-family: "PP";
+    font-weight: 900;
+}
+
+button {
+    background-color: white;
+    border-radius: 0.25em;
+    padding: 0.75em 1em;
+    outline: none;
+    border: none;
+    color: black;
+    border-radius: 0.5em;
+    font-weight: 500;
+    
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.intro {
+    background: url("/assets/hero2.jpg") no-repeat 50% 50%;
+    background-size: cover;
+
+    
+}
+
+.outro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, black, #364549);
+    background-size: 200% 200%;
+    overflow: hidden;
+    
+}
+
+.outro p {
+    width: 75%;
+    text-align: center;
+    color: white;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.125;
+}
+
+.outro p span {
+    color: #75e1ff;
+}
+
+.cards {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150vw;
+    height: 600px;
+    will-change: transform;
+    
+}
+
+.card {
+    position: absolute;
+    width: 500px;
+    height: 550px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    margin-left: -250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    will-change: tranform;
+    
+}
+
+.card-img {
+    flex: 1;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+.card-content {
+    width: 100%;
+    height: 60px;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.25;
+    color: white;
+    text-align: left;
+    font-weight: 500;
+}
+
+.step-counter {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+.counter-title, .count {
+position: relative;
+width: 1200px;
+height: 150px;
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+overflow: hidden;
+}
+
+.count {
+    top: -10px;
+}
+
+.count-container {
+    position: relative;
+    transform: translateY(150px);
+    will-change: transform;
+}
+
+.step-counter h1 {
+    width: 100%;
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: "PP";
+    font-size: 150px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    will-change: transform;
+}
+
+.empty {
+    opacity: 0;
+}
+
+@media (max-width: 900px) {
+    .counter-title {
+        height: 30px;
+    }
+
+    .counter-title h1 {
+        font-size: 30px;
+    }
+
+    .count {
+        top: 0px;
+        left: -10px;
+    }
+
+    .cards {
+        top: 27.5%
+    }
+
+    .card { 
+        width: 375px;
+        height: 500px;
+    }
 }
