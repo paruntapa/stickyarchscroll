@@ -1,11 +1,11 @@
 "use client"
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import ReactLenis from "lenis/react";
 import { useRef } from "react";
-import { root } from "postcss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,8 +187,8 @@ export default function Home() {
         </div>
     </section>
 
-    <section className='outro overflow-hidden'>
-      <p>
+    <section className='outro '>
+      <p className="top-40">
         Our 3D design tool is built to enhance yout creative workflow,
         <span> providing a seamless and intuitive experience </span>
         for crafting stunning
